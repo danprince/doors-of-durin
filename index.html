@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head north="from" rivendell>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Doors of Durin</title>
+  </head>
+  <body>
+    <!-- Ithildin mirrors only starlight and moonlight and View Source... -->
+    <input type="text" autofocus required pattern="^[Mm]ellon$" spellcheck="false" />
+    <p>Doors of Durin, Lord of Moria.<br/>Speak friend and enter.</p>
+    <pre id="d">
+                         @ @
+               ')    ___=====___    ('
+             _:===:="..........."=:===:_
+         ')="....... ___=====___......."=('
+         =". _==:==="     .     "===:==_ .":
+       :". :=            <*>            =: .":
+     // . //         *    '    *         \\ .\\
+  ')... ..        *      .^.      *       .. ...('
+   //. //      *      , / | \ ,      *     \\ .\\
+  //. //               \v'v'v/              \\ .\\
+  ::. ::               :=====:               :: .::
+')||. ||                                     || .||('
+  ||. ||                ,                    || .||
+ .______.              ||=====              .______.
+(@-____-@)".--.       <------->       .--. (@-____-@)
+ /|    |  /.''\\       '-----'       //''.\  |    |\
+('-_   | (/ '=_/                     \_=' \) |   _-')
+ ''-_'-_ || "  .===._)        (_.===.     || _-'_-''
+  |  '-_\| \ _''   '=_.)    (._='    ''_ /  /_-'  |
+  |    |\   //       \\      //        \\   /|    |
+  |    | |  /    (    '._' '_.'.'     ) \  | |    |
+  |    |;|  |    '.==.'         '.==.'  |  | |    |
+ (\.   | |  |  )          .         (   |  | |   ./)
+  \_'-_|_|  | .''.     .^/|\^.    .''.  |  |_|_-'_/
+  | '-_  |  |//-.      <--o-->      .-\\|  -  _-' |
+  |     \    /  .'     .v\|/v.     '.  \    /     |
+ |      ||  |             .             |  ||      |
+ |      ||  |                           |  ||      |
+ |      ||  |                           |  ||      |
+ |      |/  |                           |  \|      |
+ |      |   |                           |   |      |
+ |      |   \_.          jↄↄ          ._/   |      |
+ (-.__.-)      \                     /      (-.__.-)
+(-.____.-)     '----___________-----'      (-.____.-)
+|        |                                 |        |
+
+    </pre>
+    <script>
+     txt=d.textContent
+     d.textContent=""
+     for(c of txt)
+       s=d.appendChild(document.createElement`span`),
+       s.textContent=c,
+       s.style.animationDelay=Math.random()*3+"s"
+    </script>
+    <style>
+     *{margin:0}
+     input:valid{opacity:0}
+     input:valid~pre>span{animation:linear 5s infinite on}
+     @keyframes on{
+       0%{color:#19585b}
+       40%{color:#7ee6e8}
+       50%{color:#d5f7f8}
+       60%{color:#7ee6e8}
+       100%{color:#19585b}}
+     pre{font-weight:bold;display:inline-block;text-align:left}
+     body{background:black;color:#344248;font-family:monaco,monospace;
+       user-select:none;min-height:100vh;text-align:center;display:flex;
+       flex-direction:column-reverse;align-items:center;justify-content:center}
+     input{font:inherit;color:#7ee6e8;background:none;border:0;outline:none;
+       text-align:center;transition:3s;transform:translateY(-180px)}
+    </style>
+  </body>
+</html>
